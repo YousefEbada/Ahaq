@@ -58,6 +58,7 @@ export function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden">
+      {/* <p>Hello World</p> */}
       {/* Background with Parallax Effect */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"

@@ -8,6 +8,7 @@ import { KitComponents } from "@/components/kit-components";
 import { ImpactMetrics } from "@/components/impact-metrics";
 import { Testimonials } from "@/components/testimonials";
 import { ContactForm } from "@/components/contact-form";
+import Home from "./home";
 
 export default function Landing() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Landing() {
     <div className="min-h-screen bg-ocean-900 text-white overflow-x-hidden">
       <Navbar />
       <main>
+        {/* <Home /> */}
         <HeroSection />
         <VisionMission />
         <CurriculumOverview />

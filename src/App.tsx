@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+// import { Switch, Route } from "wouter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,33 +15,44 @@ import TeacherLessons from "@/pages/teacher-lessons";
 import TeacherResources from "@/pages/teacher-resources";
 import FileManager from "@/pages/file-manager";
 import NotFound from "@/pages/not-found";
-import { Chatbot } from "@/components/chatbot";
+// import { Chatbot } from "@/components/chatbot";
+import Register from "./pages/register";
+import { HeroSection } from "./components/hero-section";
 
 function Router() {
-  const { isAuthenticated, isLoading } = useAuth();
+  // const { isAuthenticated, isLoading } = useAuth();
 
   return (
-    <Switch>
-      {isLoading || !isAuthenticated ? (
-        <>
-          <Route path="/" component={Landing} />
-          <Route path="/samples" component={Landing} />
-        </>
-      ) : (
-        <>
-          <Route path="/" component={Home} />
-          <Route path="/dashboard" component={Home} />
-          <Route path="/curriculum" component={Curriculum} />
-          <Route path="/curriculum/lesson/:id" component={LessonDetail} />
-          <Route path="/teacher/dashboard" component={TeacherDashboard} />
-          <Route path="/teacher/lessons" component={TeacherLessons} />
-          <Route path="/teacher/resources" component={TeacherResources} />
-          <Route path="/files" component={FileManager} />
-        </>
-      )}
-      <Route component={NotFound} />
-    </Switch>
+    // <Switch>
+    //   {isLoading || !isAuthenticated ? (
+    //     <>
+    //       <Route path="/" component={Landing} />
+    //       <Route path="/samples" component={Landing} />
+    //     </>
+    //   ) : (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/dashboard" element={<Home />} />
+        <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/curriculum/lesson/:id" element={<LessonDetail />} />
+        <Route path="/teacher/dashboard" element={<TeacherDashboard />} />
+        <Route path="/teacher/lessons" element={<TeacherLessons />} />
+        <Route path="/teacher/resources" element={<TeacherResources />} />
+        <Route path="/files" element={<FileManager />} />
+        {/* fallback for unknown routes */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
+}
+{
+  /* <Route component={NotFound} />
+    </Switch> */
+}
+{
+  /* );
+} */
 }
 
 function App() {
@@ -50,7 +62,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          <Chatbot />
+          {/* <Chatbot /> */}
         </TooltipProvider>
       </LanguageProvider>
     </QueryClientProvider>

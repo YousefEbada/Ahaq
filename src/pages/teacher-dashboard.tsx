@@ -18,7 +18,9 @@ import {
   Calendar,
   TrendingUp,
   Bell,
-  Wrench
+  Wrench,
+  Settings,
+  Upload
 } from "lucide-react";
 import { isUnauthorizedError } from "@/lib/authUtils";
 
@@ -114,52 +116,52 @@ export default function TeacherDashboard() {
 
 
 
-  const recentLessons: Lesson[] = lessonsData?.lessons || [
-    {
-      id: '1',
-      title: 'Introduction to Robotics',
-      description: 'Basic concepts of robotics and automation',
-      duration: 45,
-      level: 'Starter',
-      progress: 100,
-      status: 'completed'
-    },
-    {
-      id: '2',
-      title: 'Building Simple Machines',
-      description: 'Levers, pulleys, and mechanical advantage',
-      duration: 60,
-      level: 'Builder',
-      progress: 75,
-      status: 'in_progress'
-    },
-    {
-      id: '3',
-      title: 'Electronics Fundamentals',
-      description: 'Circuits, voltage, and current basics',
-      duration: 50,
-      level: 'Engineer',
-      progress: 0,
-      status: 'not_started'
-    }
-  ];
+  // const recentLessons: Lesson[] = lessonsData?.lessons || [
+  //   {
+  //     id: '1',
+  //     title: 'Introduction to Robotics',
+  //     description: 'Basic concepts of robotics and automation',
+  //     duration: 45,
+  //     level: 'Starter',
+  //     progress: 100,
+  //     status: 'completed'
+  //   },
+  //   {
+  //     id: '2',
+  //     title: 'Building Simple Machines',
+  //     description: 'Levers, pulleys, and mechanical advantage',
+  //     duration: 60,
+  //     level: 'Builder',
+  //     progress: 75,
+  //     status: 'in_progress'
+  //   },
+  //   {
+  //     id: '3',
+  //     title: 'Electronics Fundamentals',
+  //     description: 'Circuits, voltage, and current basics',
+  //     duration: 50,
+  //     level: 'Engineer',
+  //     progress: 0,
+  //     status: 'not_started'
+  //   }
+  // ];
 
-  const announcements: Announcement[] = announcementsData?.announcements || [
-    {
-      id: '1',
-      title: 'New STEM Kits Available',
-      message: 'Advanced robotics kits are now available for Engineer level classes.',
-      date: '2025-08-10',
-      priority: 'high'
-    },
-    {
-      id: '2',
-      title: 'Teacher Training Session',
-      message: 'Join us for a professional development session on August 15th.',
-      date: '2025-08-08',
-      priority: 'medium'
-    }
-  ];
+  // const announcements: Announcement[] = announcementsData?.announcements || [
+  //   {
+  //     id: '1',
+  //     title: 'New STEM Kits Available',
+  //     message: 'Advanced robotics kits are now available for Engineer level classes.',
+  //     date: '2025-08-10',
+  //     priority: 'high'
+  //   },
+  //   {
+  //     id: '2',
+  //     title: 'Teacher Training Session',
+  //     message: 'Join us for a professional development session on August 15th.',
+  //     date: '2025-08-08',
+  //     priority: 'medium'
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-blue-900">
@@ -174,7 +176,7 @@ export default function TeacherDashboard() {
             </div>
             <div className={`flex items-center ${language === 'ar' ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
               <span className="text-sm text-gray-600 dark:text-gray-300">
-                {t('teacher.welcome')}, {user?.firstName || 'Teacher'}
+                {t('teacher.welcome')}, {/*user?.firstName || 'Teacher'*/}
               </span>
               <Button 
                 variant="outline" 
@@ -243,7 +245,7 @@ export default function TeacherDashboard() {
 
           <TabsContent value="lessons">
             <div className="grid gap-6">
-              {recentLessons.map((lesson) => (
+              {/* {recentLessons.map((lesson) => (
                 <Card key={lesson.id} className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border-blue-200 dark:border-gray-700">
                   <CardHeader>
                     <div className="flex items-center justify-between">
@@ -291,7 +293,7 @@ export default function TeacherDashboard() {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+              ))} */}
             </div>
           </TabsContent>
 
@@ -337,7 +339,7 @@ export default function TeacherDashboard() {
 
           <TabsContent value="announcements">
             <div className="space-y-4">
-              {announcements.map((announcement) => (
+              {/* {announcements.map((announcement) => (
                 <Card key={announcement.id} className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border-blue-200 dark:border-gray-700">
                   <CardHeader>
                     <div className="flex items-center justify-between">
@@ -362,7 +364,7 @@ export default function TeacherDashboard() {
                     <p className="text-gray-700 dark:text-gray-300">{announcement.message}</p>
                   </CardContent>
                 </Card>
-              ))}
+              ))} */}
             </div>
           </TabsContent>
         </Tabs>

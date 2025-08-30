@@ -12,7 +12,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useQuery } from "@tanstack/react-query";
 import { isUnauthorizedError } from "@/lib/authUtils";
 import { interpolate } from "@/lib/i18n";
-import steamKitImage from "@assets/3d6eda70-9a41-439f-b7c5-d303f49416f8_1754863007760.png";
+import steamKitImage from "@assets/3d6eda70-9a41-439f-b7c5-d303f49416f8_1754863007760.png"; 
+
 import { 
   ArrowLeft,
   Clock, 

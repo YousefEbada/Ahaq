@@ -70,7 +70,7 @@ export function VisionMission() {
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-300 mb-2">S</div>
               <div className="text-blue-200 font-medium">{t('steam.science')}</div>
-            </div>
+            </div>            
             <div className="text-center">
               <div className="text-4xl font-bold text-blue-400 mb-2">T</div>
               <div className="text-blue-200 font-medium">{t('steam.technology')}</div>

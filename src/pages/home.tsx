@@ -136,7 +136,7 @@ export default function Home() {
                   {t('dashboard.welcome')}
                 </h1>
                 <p className="text-xl text-gray-300">
-                  Welcome back, {user?.firstName || user?.email || 'Teacher'}!
+                  Welcome back, {/*user?.firstName || user?.email || 'Teacher'}!*/}
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function Home() {
                     </p>
                     <Link href={action.href}>
                       <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 group-hover:border-white/40 transition-all duration-300">
-                        Get Started
+                        Get Started HHIIIIII
                         <ChevronRight className="w-4 h-4 ml-2" />
                       </Button>
                     </Link>
